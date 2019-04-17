@@ -25,7 +25,7 @@ INSTALLATION
 
 CONFIGURATION
 -------------
-You can Submit Form data Using http://roundearths.local/admin/config/user-interface/mytest Link
-You Can View Data in  http://roundearths.local/admin/config/user-interface/display-data
+You can Submit Form data Using http://xxxx/admin/config/user-interface/mytest Link
+You Can View Data in  http://xxxx/admin/config/user-interface/display-data
 
 Link Can be access Inside Configuration -> User Interface
