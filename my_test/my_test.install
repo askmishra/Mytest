@@ -1,0 +1,45 @@
+<?php
+
+function my_test_schema() {
+	
+ $schema['custom_test'] = array(
+    'description' => 'Custom User Data.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary Key: unique ID .',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'fname' => array(
+        'description' => 'First Name',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+	  'lname' => array(
+        'description' => 'Last Name',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+	  'email' => array(
+        'description' => 'Email',
+        'type' => 'varchar_ascii',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+	 
+    ),
+   
+    'primary key' => array(
+      'id',
+    ),
+  );
+  return $schema;
+  
+
+}

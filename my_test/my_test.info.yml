@@ -1,0 +1,5 @@
+name: 'My Test'
+type: module
+description: 'This is for Create custom table in db and submit data in custom table'
+core: 8.x
+package: 'Test'

@@ -1,0 +1,10 @@
+my_test.admin:
+  title: 'My Test Form '
+  description: ' This form is Only testing Purpose. '
+  parent: system.admin_config_ui
+  url: internal:/admin/config/user-interface/mytest
+test_display.admin:
+  title: 'Display Custom Data'
+  description: 'Display Custom Data. '
+  parent: system.admin_config_ui
+  url: internal:/admin/config/user-interface/display-data 

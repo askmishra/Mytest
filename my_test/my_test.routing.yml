@@ -1,0 +1,17 @@
+
+my_test.mytest_form:
+  path: 'admin/config/user-interface/mytest'
+  defaults:
+    _form: '\Drupal\my_test\Form\MytestForm'
+    _title: 'Mytest Form'
+  requirements:
+     _permission: 'administer site configuration'
+  
+
+my_test.custom_controller_display:
+  path: 'admin/config/user-interface/display-data'
+  defaults:
+    _controller: '\Drupal\my_test\Controller\CustomController::display'
+    _title: 'Display Form'
+  requirements:
+    _permission: 'administer site configuration'
