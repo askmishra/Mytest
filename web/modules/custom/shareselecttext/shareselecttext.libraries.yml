@@ -1,0 +1,9 @@
+shareselect:
+  global-scripts:
+    js: 
+      js/sharect.min.js: {}
+      js/custom_share.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+

@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains custon_node_view_count.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function custon_node_view_count_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custon_node_view_count module.
+    case 'help.page.custon_node_view_count':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('This modules use for Node view Count') . '</p>';
+      return $output;
+
+    default:
+  }
+}

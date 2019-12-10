@@ -1,0 +1,55 @@
+diff --git a/core/modules/migrate/migrate.api.php b/core/modules/migrate/migrate.api.php
+index 664df62..7586dac 100644
+--- a/core/modules/migrate/migrate.api.php
++++ b/core/modules/migrate/migrate.api.php
+@@ -83,34 +83,33 @@
+  * @subsection sec_stubs Stubs
+  * Taxonomy terms are an example of a data structure where an entity can have a
+  * reference to a parent. When a term is being migrated, it is possible that its
+- * parent term has not yet been migrated. Migrate API addresses this 'chicken or
+- * the egg' dilemma by creating a stub term for the parent so that the child
++ * parent term has not yet been migrated. Migrate API addresses this 'chicken
++ * and egg' dilemma by creating a stub term for the parent so that the child
+  * term can establish a reference to it. When the parent term is eventually
+- * being migrated, Migrate API updates the previously created stub with the
+- * actual content.
++ * migrated, Migrate API updates the previously created stub with the actual
++ * content.
+  *
+  * @subsection sec_map_tables Map tables
+  * Once a migrated row is saved and the destination ID is known, Migrate API
+  * saves the source ID, destination ID and the row hash into a map table. The
+- * source ID and the hash in the map allow for tracking changes for continuous
+- * migrations. Other migrations can use the map tables for lookup purposes when
+- * establishing relations between records.
++ * source ID and the hash allow tracking changes for continuous migrations.
++ * Other migrations can use the map tables for lookup purposes when establishing
++ * relationships between records.
+  *
+  * @subsection sec_highwater_marks Highwater marks
+  * Highwater marks allow Migrate API to track changes so that we can migrate
+- * only content that has been created or updated in the source since the
+- * migration was previously executed. This requires the source to have a special
+- * highwater property. This can be any property that indicates the highest value
+- * migrated so far. If the source system has for example a timestamp that
+- * indicates when a node was created or last updated, that timestamp could be
+- * used as a highwater property. If we execute the migration again, only those
+- * nodes that have a higher timestamp than in the previous migration would be
+- * included.
++ * only data that has been created or updated in the source since the migration
++ * was previously executed. This requires the source to have a special highwater
++ * property. This can be any property that indicates the highest value migrated
++ * so far. For example, a timestamp property that indicates when a row of data
++ * was created or last updated would make an excellent highwater property.
++ * If we execute the migration again, only those rows that have a higher
++ * timestamp than in the previous migration would be included.
+  *
+  * @subsection sec_rollbacks Rollbacks
+- * It is quite typical that when developing a migration, the first version does
++ * When developing a migration, it is quite typical that the first version does
+  * not provide correct results for all scenarios. Rollbacks allow you to undo a
+- * migration, adjust the migration and then execute it again.
++ * migration and then execute it again after adjusting it.
+  *
+  * @section sec_more_info Documentation handbooks
+  * @link https://www.drupal.org/docs/8/api/migrate-api Migrate API handbook. @endlink

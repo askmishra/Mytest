@@ -1,0 +1,5 @@
+services:
+  custom_node_view_count.hook_nodes_load:
+    class: Drupal\custom_node_view_count\EventSubscriber\NodeloadEventSubscriber
+    tags:
+     - { name: event_subscriber }

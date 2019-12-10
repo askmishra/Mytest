@@ -1,0 +1,25 @@
+id: my_migration_id_medias
+label: 'Remote Media import for Custom article'
+source:
+  plugin: embedded_data
+  data_rows:
+    -
+      id: 1
+      title: 'Page 1 title'
+      file: 'https://www.drupal.org/files/druplicon-small.png'
+    -
+      id: 2
+      title: 'Page 2 title'
+      file: 'https://www.drupal.org/files/drupal_logo-blue.png'
+  ids:
+    id:
+      type: integer
+process:
+  nid: id
+  field_media_image:
+    plugin: file_remote_url
+    source: img_url
+  field_title: alt
+destination:
+  plugin: 'entity:media'
+  

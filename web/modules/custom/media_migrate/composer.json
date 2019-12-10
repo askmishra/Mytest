@@ -1,0 +1,13 @@
+{
+    "name": "media_migrate",
+    "type": "drupal-module",
+    "description": "My Awesome Module",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/media_migrate",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/media_migrate",
+        "source": "http://cgit.drupalcode.org/media_migrate",
+    },
+}

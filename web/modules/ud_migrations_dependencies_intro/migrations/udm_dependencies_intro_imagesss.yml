@@ -1,0 +1,40 @@
+id: udm_dependencies_intro_imagesss
+label: 'UD dependee image migration'
+migration_tags:
+  - UD Articles
+  - UD Example
+source:
+  constants:
+    SOURCE_DOMAIN: 'https://agaric.coop'
+    DRUPAL_FILE_DIRECTORY: 'public://portrait/'
+  plugin: custom_migrate
+process:
+  psf_destination_filename:
+    - plugin: callback
+      callable: basename
+      source: img_url
+    - plugin: skip_on_empty
+      method: row
+      message: 'Cannot import empty image filename.'
+  psf_destination_full_path:
+    - plugin: concat
+      source:
+        - constants/DRUPAL_FILE_DIRECTORY
+        - '@psf_destination_filename'
+    - plugin: urlencode
+  psf_source_image_path:
+    - plugin: concat
+      delimiter: '/'
+      source:
+        - constants/SOURCE_DOMAIN
+        - img_url
+    - plugin: urlencode
+  uri:
+    plugin: file_copy
+    source:
+      - 'img_url'
+      - '@psf_destination_full_path'
+    file_exists: 'rename'
+    move: FALSE
+destination:
+  plugin: 'entity:media'

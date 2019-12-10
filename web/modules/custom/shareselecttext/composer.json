@@ -1,0 +1,13 @@
+{
+    "name": "shareselecttext",
+    "type": "drupal-module",
+    "description": "This is used for Selected text",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/shareselecttext",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/shareselecttext",
+        "source": "http://cgit.drupalcode.org/shareselecttext",
+    },
+}

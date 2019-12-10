@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_rsa
+  module:
+    - user
+_core:
+  default_config_hash: jLkMFqpbSJphJv4MfuLl3wbZ8EBl-5mcjak0erRZ5U0
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  field_rsa:
+    type: boolean_checkbox
+    weight: 5
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  
+ 
+  

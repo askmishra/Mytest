@@ -1,0 +1,29 @@
+id: custom_article_migration_with_external_filesa
+label: 'Custom article migration with external files'
+source:
+  plugin: embedded_data
+  data_rows:
+    -
+      fid: 1
+      title: 'interdiff-2944846-2-5txt'
+      uri: 'https://www.drupal.org/files/issues/2018-06-23/interdiff-2944846-2-5.txt'
+    -
+      fid: 2
+      title: 'interdiff-2944846-2-5.txt'
+      uri: 'https://www.drupal.org/files/issues/interdiff-2933620-38-47.txt'
+  ids:
+    fid:
+      type: integer
+process:
+  uid:
+    plugin: default_value
+    default_value: 1
+  fid: fid
+  filename: title
+  uri: uri
+destination:
+  plugin: 'entity:file'
+  source_path_property: https://www.drupal.org/files/issues/2018-06-23/
+  destination_path_property: public://images
+template: null
+migration_dependencies: {  }

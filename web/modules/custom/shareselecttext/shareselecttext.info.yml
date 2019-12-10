@@ -1,0 +1,7 @@
+name: 'shareselecttext'
+type: module
+description: 'This is used for Selected text'
+core: 8.x
+package: 'Custom'
+libraries:
+  - shareselecttext/global-scripts

@@ -1,0 +1,12 @@
+id: custom_taxonomy_termssaas
+label: ' Drupal 8 taxonomy terms'
+source:
+  plugin: taxonomy_migrate
+  key: migrate
+process:
+   tid: tid
+   name: name
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: tags
+  

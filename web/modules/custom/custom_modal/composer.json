@@ -1,0 +1,13 @@
+{
+    "name": "custom_modal",
+    "type": "drupal-module",
+    "description": "My Awesome Module",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/custom_modal",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/custom_modal",
+        "source": "http://cgit.drupalcode.org/custom_modal",
+    },
+}

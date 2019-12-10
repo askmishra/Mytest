@@ -1,0 +1,43 @@
+diff --git a/core/modules/migrate/migrate.api.php b/core/modules/migrate/migrate.api.php
+index 62a9cf7..c705d17 100644
+--- a/core/modules/migrate/migrate.api.php
++++ b/core/modules/migrate/migrate.api.php
+@@ -25,17 +25,18 @@
+  *
+  * In the source phase, a set of data, called the row, is retrieved from the
+  * data source. The data can be migrated from a database, loaded from a file
+- * (for example CSV, JSON, XML) or fetched from a web service (RSS or REST). The
+- * row is sent to the process phase where it is transformed as needed or marked
+- * to be skipped. Processing can also determine if a 'stub' needs to be created.
+- * For example, if a term has a parent term which hasn't been migrated yet, a
+- * stub term is created so that the parent relation can be established, and the
+- * stub is updated at a later point. After processing, the transformed row is
+- * passed to the destination phase where it is loaded (saved) into the target
+- * Drupal site.
+- *
+- * The overall ETL process is defined as a migration plugin. The three phases
+- * (source, process and destination) also have their own plugin types.
++ * (for example CSV, JSON or XML) or fetched from a web service (for example RSS
++ * or REST). The row is sent to the process phase where it is transformed as
++ * needed or marked to be skipped. Processing can also determine if a 'stub'
++ * needs to be created. For example, if a term has a parent term which hasn't
++ * been migrated yet, a stub term is created so that the parent relation can be
++ * established, and the stub is updated at a later point. After processing, the
++ * transformed row is passed to the destination phase where it is loaded (saved)
++ * into the target Drupal site.
++ *
++ * Migrate API uses the Drupal plugin system for many different purposes. Most
++ * importantly, the overall ETL process is defined as a migration plugin and the
++ * three phases (source, process and destination) have their own plugin types.
+  *
+  * @section sec_migrations Migrate API migration plugins
+  * Migration plugin definitions are stored in a module's 'migrations' directory.
+@@ -70,7 +71,7 @@
+  * @link https://api.drupal.org/api/drupal/namespace/Drupal!migrate!Plugin!migrate!process List of process plugins for common operations provided by the core Migrate module. @endlink
+  *
+  * @section sec_destination Migrate API destination plugins
+- * Mirate API destination plugins implement
++ * Migrate API destination plugins implement
+  * \Drupal\migrate\Plugin\MigrateDestinationInterface and usually extend
+  * \Drupal\migrate\Plugin\migrate\destination\DestinationBase. They are
+  * annotated with \Drupal\migrate\Annotation\MigrateDestination annotation and

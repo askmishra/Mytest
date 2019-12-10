@@ -1,0 +1,56 @@
+# modules/custom/my_custom_module/migrations/my_media_audio.yml
+id: media_migrate_image
+label: Media Audio
+migration_tags:
+  - Custom
+   
+
+
+source:
+  plugin: media_migrate
+  constants:
+    bundle: 'image'
+    DRUPAL_FILE_DIRECTORY: 'public://portrait/'
+
+process:
+  psf_destination_filename:
+    - plugin: callback
+      callable: basename
+      source: img_url
+    - plugin: skip_on_empty
+      method: row
+      message: 'Cannot import empty image filename.'
+  psf_destination_full_path:
+    - plugin: concat
+      source:
+        - constants/DRUPAL_FILE_DIRECTORY
+        - '@psf_destination_filename'
+    - plugin: urlencode
+  mid: id
+  bundle: 'constants/bundle'
+
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+
+  name: alt
+
+  # Image field see media_entity.bundle.image.yml.
+  field_media_image/target_id: id
+  field_media_image/alt: field_file_image_alt_text/0/value
+  field_media_image/title: field_file_image_title_text/0/value
+
+  # Description field.
+  field_description: 'testtttt'
+  # Caption field.
+  field_caption: field_caption
+  uri:
+    plugin: file_copy
+    source:
+      - 'img_url'
+      - '@psf_destination_full_path'
+
+destination:
+  plugin: entity:media
+ 

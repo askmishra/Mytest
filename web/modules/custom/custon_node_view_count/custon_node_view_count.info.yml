@@ -1,0 +1,7 @@
+name: 'Custon Node View Count'
+type: module
+description: 'This modules use for Node view Count'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - hook_even_dispatcher
